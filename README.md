@@ -1,45 +1,42 @@
-# Análisis del Comportamiento del Usuario en una Aplicación de Productos Alimenticios
+# User Behavior Analysis in a Food Products Mobile Application
 
-### Descripción del Proyecto<br>
+### Project Description<br>
 
-En este proyecto, me enfoqué en el análisis del comportamiento del usuario dentro de una aplicación móvil de una empresa emergente de productos alimenticios. El objetivo principal fue investigar cómo interactúan los usuarios con la aplicación durante un período específico, identificar patrones de uso y evaluar la efectividad de las diferentes etapas del embudo de eventos mediante una prueba A/A/B.
+In this project, I focused on analyzing user behavior within the mobile application of a food products start-up. The main goal was to investigate how users interact with the app over a specific time period, identify usage patterns, and evaluate the effectiveness of different stages of the event funnel using an A/A/B test.
 
-### Objetivos:<br>
+### Objectives:<br>
 
-   * Estudiar y validar la integridad de los datos de la aplicación.<br>
-   * Analizar el embudo de eventos para comprender el flujo de los usuarios a través de la aplicación.<br> 
-   * Estudiar los resultados de un experimento (A/A/B testing) para identificar posibles diferencias significativas entre los grupos.<br>
+   * Validate the integrity of the app’s data.<br>
+   * Analyze the event funnel to understand user flow throughout the app.<br> 
+   * Study the results of an A/A/B experiment to identify potential significant differences between groups.<br>
 
-### Metodología:<br>
+### Methodology:<br>
 
-Utilicé Python y librerías como pandas, numpy, seaborn, plotly, scipy y statsmodels para realizar un análisis exploratorio y evaluar la validez de la prueba A/A/B. El trabajo incluyó:<br>
-    
-   * Un análisis de datos de usuario recopilados entre el 25 de julio de 2019 y el 7 de agosto de 2019.<br>
-   * Preparación exhaustiva de los datos, incluyendo la revisión de tipos de datos, la detección y eliminación de valores duplicados y transformación de columnas para un análisis más detallado.<br>
-   * Análisis de las frecuencias de los eventos y el número de usuarios únicos en cada etapa del embudo.<br>
-   * Se examinó el período de tiempo cubierto por los datos para identificar y excluir cualquier dato atípico inicial que pudiera distorsionar los resultados del experimento, enfocándose en el período de mayor actividad de la aplicación (agosto de 2019).<br>
-   * Realización de pruebas estadísticas de proporciones y la prueba de Mann-Whitney U para comparar los grupos del experimento (246, 247 y 248) y determinar si existían diferencias significativas entre ellos.<br>
+I used Python and libraries such as pandas, numpy, seaborn, plotly, scipy, and statsmodels to conduct an exploratory analysis and evaluate the validity of the A/A/B test. Key tasks included:<br>
+  * Analyzing user data collected between July 25, 2019, and August 7, 2019.<br>
+  * Performing thorough data preparation, including data type checks, detection and removal of duplicates, and column transformations for deeper analysis.<br>
+  * Examining event frequencies and the number of unique users at each funnel stage.<br>
+  * Reviewing the time period covered to identify and exclude early outliers that could distort experimental results, focusing on the app’s peak activity period (August 2019).<br>
+  * Conducting proportion tests and the Mann-Whitney U test to compare experimental groups (246, 247, and 248) and determine if significant differences existed among them.<br>
 
+### Key Findings:<br>
 
-### Conclusiones:<br>
+   - The most frequent event was MainScreenAppear, followed by OffersScreenAppear, CartScreenAppear, and PaymentScreenSuccessful. Tutorial was the least frequent event.<br>
 
-   - Se identificó que el evento más frecuente es "MainScreenAppear" (pantalla principal), seguido por "OffersScreenAppear" (pantalla de ofertas), "CartScreenAppear" (carrito de compras) y "PaymentScreenSuccessful" (pago exitoso). El "Tutorial" es el evento menos frecuente.<br>
+   - A total of 7,551 unique users were recorded during the study period.<br>
 
-   - La aplicación registró un total de 7,551 usuarios únicos durante el período de estudio.<br> 
+   - Average number of events per user: 32.28.<br>
 
-   - El promedio de eventos por usuario es de 32.28.<br> 
+   - The largest drop-offs occurred between the main screen and the offers screen (loss of 2,826 unique users) and from successful payment to tutorials (2,699 unique users lost).<br>
 
-   - Las etapas donde se pierden más usuarios son la transición de la pantalla principal a la de ofertas (2,826 usuarios únicos perdidos) y de la página de pago exitoso a los tutoriales (2,699 usuarios únicos perdidos).<br>
+   - Only 11.15% of users completed the full process from their first event to a successful payment.
 
-   - Solo el 11.15% de los usuarios completan todo el proceso, desde su primer evento hasta el pago exitoso.<br> 
-
-   - A pesar de los ajustes en el umbral y la corrección de alpha con el método Sidak, las pruebas estadísticas (prueba de proporciones Z y Mann-Whitney U) indicaron diferencias significativas entre los grupos del experimento (246, 247 y 248). Esto sugiere que las muestras de los grupos no fueron tomadas correctamente o que existe una diferencia inherente en el comportamiento de los usuarios en estos grupos.<br> 
-
-
-### Lenguajes y herramientas principales:<br>
+   - Despite threshold adjustments and Sidak alpha correction, the statistical tests (Z-test for proportions and Mann-Whitney U) indicated significant differences between experimental groups (246, 247, and 248). This suggests either improper randomization or inherent behavioral differences between groups.<br>
+   
+### Tools & Technologies:<br>
 
    * Python (pandas, numpy, seaborn, matplotlib, plotly express, scipy).<br>
-   * Jupyter Notebook para documentación del análisis.<br>
-   * Prueba Z de proporciones y Mann-Whitney U para validación estadística.<br>
+   * Jupyter Notebook for analysis documentation.<br>
+   * Z-test for proportions and Mann-Whitney U for statistical validation.<br>
 
-Este análisis proporciona una comprensión detallada del comportamiento del usuario en la aplicación, destacando áreas clave de mejora en el embudo de conversión y la importancia de asegurar la correcta aleatorización de los grupos en futuros experimentos A/A/B.
+This analysis provided a detailed understanding of user behavior within the app, highlighting key areas for improving the conversion funnel and the importance of ensuring proper group randomization in future A/A/B experiments.
